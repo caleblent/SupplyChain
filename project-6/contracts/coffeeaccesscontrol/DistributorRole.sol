@@ -7,6 +7,8 @@ import "./Roles.sol";
 contract DistributorRole {
 
   // Define 2 events, one for Adding, and other for Removing
+  event DistributorAdded(address indexed account);
+  event DistributorRemoved(address indexed account);
 
   // Define a struct 'distributors' by inheriting from 'Roles' library, struct Role
 

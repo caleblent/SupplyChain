@@ -12,15 +12,15 @@ contract ConsumerRole {
 
   // Define a struct 'consumers' by inheriting from 'Roles' library, struct Role
   Roles.Role private consumers;
-  
+
   // In the constructor make the address that deploys this contract the 1st consumer
   constructor() public {
-    
+    _addConsumer(msg.sender);
   }
 
   // Define a modifier that checks to see if msg.sender has the appropriate role
   modifier onlyConsumer() {
-    
+    require(isConsumer(msg.sender));
     _;
   }
 

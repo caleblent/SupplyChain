@@ -163,7 +163,27 @@ contract SupplyChain {
     string  _productNotes) public 
   {
     // Add the new item as part of Harvest
+    // create the new item using the method arguments
+    Item memory newItem = Item({
+      sku: sku,
+      upc: _upc,
+      ownerID: _originFarmerID,
+      originFarmerID: _originFarmerID,
+      originFarmName: _originFarmName,
+      originFarmInformation: _originFarmInformation,
+      originFarmLatitude: _originFarmLatitude,
+      originFarmLongitude: _originFarmLongitude,
+      productID: sku + _upc,
+      productNotes: _productNotes,
+      productPrice: 0,
+      itemState: defaultState,
+      distributorID: 0,
+      retailerID: 0,
+      consumerID: 0
+    });
 
+    // add this newly created item to the items mapping
+    items[_upc] = newItem;
     
     // Increment sku
     sku = sku + 1;

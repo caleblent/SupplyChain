@@ -35,8 +35,8 @@ contract FarmerRole {
     _addFarmer(account);
   }
 
-  // Define a function 'renounceFarmer' to renounce this role
-  function renounceFarmer() public {
+  // Define a function 'removeFarmer' to renounce this role
+  function removeFarmer() public {
     _removeFarmer(msg.sender);
   }
 

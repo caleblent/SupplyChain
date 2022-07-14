@@ -35,8 +35,8 @@ contract RetailerRole {
     
   }
 
-  // Define a function 'renounceRetailer' to renounce this role
-  function renounceRetailer() public {
+  // Define a function 'removeRetailer' to renounce this role
+  function removeRetailer() public {
     
   }
 

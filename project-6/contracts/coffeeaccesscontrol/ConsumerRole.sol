@@ -35,8 +35,8 @@ contract ConsumerRole {
     
   }
 
-  // Define a function 'renounceConsumer' to renounce this role
-  function renounceConsumer() public {
+  // Define a function 'removeConsumer' to renounce this role
+  function removeConsumer() public {
     
   }
 

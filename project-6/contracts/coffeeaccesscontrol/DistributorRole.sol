@@ -35,8 +35,8 @@ contract DistributorRole {
 
   }
 
-  // Define a function 'renounceDistributor' to renounce this role
-  function renounceDistributor() public {
+  // Define a function 'removeeDistributor' to renounce this role
+  function removeDistributor() public {
 
   }
 

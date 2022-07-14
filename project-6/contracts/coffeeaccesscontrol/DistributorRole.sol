@@ -11,6 +11,7 @@ contract DistributorRole {
   event DistributorRemoved(address indexed account);
 
   // Define a struct 'distributors' by inheriting from 'Roles' library, struct Role
+  Roles.Role private distributors;
 
   // In the constructor make the address that deploys this contract the 1st distributor
   constructor() public {

@@ -209,9 +209,9 @@ contract SupplyChain {
   // Define a function 'packItem' that allows a farmer to mark an item 'Packed'
   function packItem(uint _upc) public 
   // Call modifier to check if upc has passed previous supply chain stage
-  
+  processed(_upc)
   // Call modifier to verify caller of this function
-  
+  verifyCaller(items[_upc].originFarmerID)
   {
     // Update the appropriate fields
     items[_upc].itemState = State.Packed;
@@ -222,12 +222,14 @@ contract SupplyChain {
   // Define a function 'sellItem' that allows a farmer to mark an item 'ForSale'
   function sellItem(uint _upc, uint _price) public 
   // Call modifier to check if upc has passed previous supply chain stage
-  
+  packed(_upc)
   // Call modifier to verify caller of this function
-  
+  verifyCaller(items[_upc].originFarmerID)
   {
     // Update the appropriate fields
+    items[_upc].productPrice = _price;
     items[_upc].itemState = State.ForSale;
+    
     // Emit the appropriate event
     emit ForSale(_upc);
   }
@@ -237,7 +239,7 @@ contract SupplyChain {
   // and any excess ether sent is refunded back to the buyer
   function buyItem(uint _upc) public payable 
     // Call modifier to check if upc has passed previous supply chain stage
-    
+    forSale(_upc)
     // Call modifer to check if buyer has paid enough
     
     // Call modifer to send any excess ether back to buyer

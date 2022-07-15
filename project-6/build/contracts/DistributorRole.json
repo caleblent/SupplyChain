@@ -2665,14 +2665,39 @@
   },
   "networks": {
     "5777": {
-      "events": {},
+      "events": {
+        "0xddbf200aa634dc3fb81cfd68583dd1040d1c751d335e1d86b631bde3e977fea8": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "DistributorAdded",
+          "type": "event"
+        },
+        "0x126174f6cf49c81cdb4a9214c6b8f037bef55b4ec31e4fc776cea2a1c8a88d59": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "DistributorRemoved",
+          "type": "event"
+        }
+      },
       "links": {},
       "address": "0x6b3baC634348C0d0D6e9cA17762C2187845776C8",
       "transactionHash": "0x560120d3492cd170fc7a4356183c4f1fdbc20964213efde20ac21f4e0af78c64"
     }
   },
   "schemaVersion": "3.4.8",
-  "updatedAt": "2022-07-15T19:21:09.853Z",
+  "updatedAt": "2022-07-15T19:42:11.019Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

@@ -43,7 +43,7 @@ contract SupplyChain {
     string  originFarmInformation;  // Farmer Information
     string  originFarmLatitude; // Farm Latitude
     string  originFarmLongitude;  // Farm Longitude
-    uint    productID;  // Product ID potentially a combination of upc + sku
+    uint    productID;  // Product ID potentially a combination of sku + upc
     string  productNotes; // Product Notes
     uint    productPrice; // Product Price
     State   itemState;  // Product State as represented in the enum above

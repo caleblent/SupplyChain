@@ -14,7 +14,7 @@ contract("SupplyChain", function (accounts) {
   const originFarmLongitude = "144.341490"
   var productID = sku + upc
   const productNotes = "Best beans for Espresso"
-  const productPrice = web3.toWei(1, "ether") // must pass the value (1 in this case) as a string or a BigNum object
+  const productPrice = web3.toWei(1, "ether")
   var itemState = 0
   const distributorID = accounts[2]
   const retailerID = accounts[3]
@@ -23,16 +23,17 @@ contract("SupplyChain", function (accounts) {
 
   ///Available Accounts
   ///==================
-  // (0) 0x0bf9d269f656e302f5933b8f928e11818597b937
-  // (1) 0x11dc8e7a146d3153dd894f542beefeb2fea05a24
-  // (2) 0xa62cf56e7eda12a2ae78fd2db8856e6e19febd82
-  // (3) 0x1bd3d7fd203079e783bb3472bb9f614f40b2077e
-  // (4) 0x97a5b5310fb9f9bf993736aae38ecc02a126dd40
-  // (5) 0xdd7133f5e3a6bffc3acb26b062d088d8b35c3c09
-  // (6) 0x23e4ce09f73e1d6c47c1fbd6114b96e36d2c5120
-  // (7) 0xcf9aab4bdd930f4deedbcee19ca1e04449ce8d0c
-  // (8) 0xd20c33f8c620d73e52a20b5664ddbf694b3265d9
-  // (9) 0x11004aeabdfd96f538db764c1b4886baebb261ef
+  // These accounts are from Ganache (CYNICAL-MIST)
+  // (0) 0x627306090abab3a6e1400e9345bc60c78a8bef57
+  // (1) 0xf17f52151ebef6c7334fad080c5704d77216b732
+  // (2) 0xc5fdf4076b8f3a5357c5e395ab970b5b54098fef
+  // (3) 0x821aea9a577a9b44299b9c15c88cf3087f3b5544
+  // (4) 0x0d1d4e623d10f9fba5db95830f7d3839406c6af2
+  // (5) 0x2932b7a2355d6fecc4b5c0b6bd44cc31df247a2e
+  // (6) 0x2191ef87e392377ec08e7c08eb105ef5448eced5
+  // (7) 0x0f4f2ac550a1b4e2280d04c21cea7ebd822934b5
+  // (8) 0x6330a553fc93768f612722bb8c2ec78ac90b3bbc
+  // (9) 0x5aeda56215b167893e80b4fe645ba6d5bab767de
 
   console.log("ganache-cli accounts used here...")
   console.log("Contract Owner: accounts[0] ", accounts[0])
@@ -99,6 +100,7 @@ contract("SupplyChain", function (accounts) {
     const supplyChain = await SupplyChain.deployed()
 
     // Declare and Initialize a variable for event
+    var eventEmitted = false
 
     // Watch the emitted event Processed()
 
@@ -114,7 +116,7 @@ contract("SupplyChain", function (accounts) {
     const supplyChain = await SupplyChain.deployed()
 
     // Declare and Initialize a variable for event
-
+    var eventEmitted = false
     // Watch the emitted event Packed()
 
     // Mark an item as Packed by calling function packItem()
@@ -129,6 +131,7 @@ contract("SupplyChain", function (accounts) {
     const supplyChain = await SupplyChain.deployed()
 
     // Declare and Initialize a variable for event
+    var eventEmitted = false
 
     // Watch the emitted event ForSale()
 
@@ -144,6 +147,7 @@ contract("SupplyChain", function (accounts) {
     const supplyChain = await SupplyChain.deployed()
 
     // Declare and Initialize a variable for event
+    var eventEmitted = false
 
     // Watch the emitted event Sold()
     var event = supplyChain.Sold()
@@ -160,6 +164,7 @@ contract("SupplyChain", function (accounts) {
     const supplyChain = await SupplyChain.deployed()
 
     // Declare and Initialize a variable for event
+    var eventEmitted = false
 
     // Watch the emitted event Shipped()
 
@@ -175,6 +180,7 @@ contract("SupplyChain", function (accounts) {
     const supplyChain = await SupplyChain.deployed()
 
     // Declare and Initialize a variable for event
+    var eventEmitted = false
 
     // Watch the emitted event Received()
 
@@ -190,6 +196,7 @@ contract("SupplyChain", function (accounts) {
     const supplyChain = await SupplyChain.deployed()
 
     // Declare and Initialize a variable for event
+    var eventEmitted = false
 
     // Watch the emitted event Purchased()
 

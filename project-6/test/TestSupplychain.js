@@ -226,7 +226,7 @@ contract("SupplyChain", function (accounts) {
     // Verify the result set
     itemState = 5
     assert.equal(resultBufferTwo[5], itemState, "Error: Invalid item state")
-    assert.equal(eventEmitted, true, "Error: Invalid event emitted")
+    assert.equal(!eventEmitted, true, "Error: Invalid event emitted")
   })
 
   // 7th Test
@@ -234,7 +234,7 @@ contract("SupplyChain", function (accounts) {
     const supplyChain = await SupplyChain.deployed()
 
     // Give retailerID retail role
-    // await supplyChain.addRetailer(retailerID)
+    await supplyChain.addRetailer(retailerID)
 
     // Declare and Initialize a variable for event
     let eventEmitted = false
